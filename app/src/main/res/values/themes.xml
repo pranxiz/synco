@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Synco" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/dgray</item>
+        <item name="colorPrimaryVariant">@color/dgray</item>
+        <item name="android:statusBarColor">@color/dgray</item>
+    </style>
+
+    <style name="Theme.Synco" parent="Base.Theme.Synco" />
+</resources>
