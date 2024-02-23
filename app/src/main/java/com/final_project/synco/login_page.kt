@@ -7,34 +7,47 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.final_project.synco.databinding.ActivityLoginPageBinding
+import com.google.android.material.textfield.TextInputLayout
 
 
 class login_page : AppCompatActivity() {
+    private lateinit var binding: ActivityLoginPageBinding
 
-        private lateinit var binding: ActivityLoginPageBinding
+    lateinit var email: TextInputLayout
+    lateinit var password: TextInputLayout
+    lateinit var loginbutton: Button
 
-        lateinit var email: EditText
-        lateinit var password: EditText
-        lateinit var loginbutton: Button
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
+        binding = ActivityLoginPageBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-            binding = ActivityLoginPageBinding.inflate(layoutInflater)
-            setContentView(binding.root)
+        email = findViewById(R.id.emailLayout)
+        password = findViewById(R.id.passwordLayout)
+        loginbutton = findViewById(R.id.loginButton)
 
-            binding.TextView.setOnClickListener {
-                val intent = Intent (this, signup_page::class.java)
-                startActivity(intent)
+        binding.TextView.setOnClickListener {
+            val intent = Intent (this, signup_page::class.java)
+            startActivity(intent)
+        }
+
+        loginbutton.setOnClickListener {
+            if (validateForm()) {
+                startActivity(Intent(this, Spage::class.java))
             }
-
-            binding.loginButton.setOnClickListener {
-                if (binding.email.text.toString() == "email" && binding.Password.text.toString() == "1234") {
-                    startActivity(Intent(this, Spage::class.java))
-                } else {
-                    Toast.makeText(this, "Login Failed!", Toast.LENGTH_SHORT).show()
-                }
-            }
-
         }
     }
+
+    private fun validateForm(): Boolean {
+        if (email.editText?.text.toString().isEmpty()) {
+            email.error = "Email is required"
+            return false
+        }
+        if (password.editText?.text.toString().isEmpty()) {
+            password.error = "Password is required"
+            return false
+        }
+        return true
+    }
+}

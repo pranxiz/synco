@@ -1,37 +1,60 @@
 package com.final_project.synco
 
-import android.icu.text.CaseMap.Title
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.EditText
-
+import android.widget.DatePicker
+import android.widget.LinearLayout
+import android.widget.Spinner
+import androidx.fragment.app.Fragment
+import java.util.Calendar
 
 class AssignedFragment : Fragment() {
-    private lateinit var noteContent: EditText
-    private lateinit var postButton: Button
-    private lateinit var addButton: Button
-    private lateinit var addTitle: EditText
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_assigned, container, false)
+        return inflater.inflate(R.layout.fragment_assigned, container, false)
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-
-        addTitle = view.findViewById(R.id.addTitle)
-        noteContent = view.findViewById(R.id.noteContent)
-        postButton = view.findViewById(R.id.postButton)
-        addButton = view.findViewById(R.id.addButton)
+        val addButton = view.findViewById<Button>(R.id.addButton)
+        val show = view.findViewById<LinearLayout>(R.id.show)
+        val SClassSpinner = view.findViewById<Spinner>(R.id.SClassSpinner)
+        val SSubjectSpinner = view.findViewById<Spinner>(R.id.SSubjectSpinner)
+        val projectDatePicker = view.findViewById<DatePicker>(R.id.projectDatePicker)
+        val submissionDatePicker = view.findViewById<DatePicker>(R.id.submissionDatePicker)
 
         addButton.setOnClickListener {
-            noteContent.visibility = View.VISIBLE
-            postButton.visibility = View.VISIBLE
-            addTitle.visibility = View.VISIBLE
+            if (show.visibility == View.GONE) {
+                show.visibility = View.VISIBLE
+            } else {
+                show.visibility = View.GONE
+            }
         }
 
-        return view
+        // Initialize spinners
+        val classAdapter = ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.classes,
+            android.R.layout.simple_spinner_item
+        )
+        classAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        SClassSpinner.adapter = classAdapter
+
+        val subjectAdapter = ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.subjects,
+            android.R.layout.simple_spinner_item
+        )
+        subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        SSubjectSpinner.adapter = subjectAdapter
+
+        // Initialize date pickers
+        projectDatePicker.init(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), null)
+        submissionDatePicker.init(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), null)
     }
 }

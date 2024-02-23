@@ -5,77 +5,117 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-
     android:padding="14dp"
     tools:context=".AssignedFragment">
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        >
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
 
     <Button
         android:id="@+id/addButton"
-       android:background="@color/dgray"
+        android:background="@color/dgray"
         android:textColor="@color/white"
         android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="Add Task" />
+    android:layout_height="wrap_content"
+    android:textSize="18sp"
+    android:text="Add Task" />
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/show"
+android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/note_background"
+    android:visibility="gone"
+    >
+
+<Spinner
+android:id="@+id/SClassSpinner"
+android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Select Class"
+    android:textSize="25sp"
+    android:textStyle="bold"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp"
+    />
+
+<Spinner
+android:id="@+id/SSubjectSpinner"
+android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Select Subject"
+    android:textSize="25sp"
+    android:textStyle="bold"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp"/>
+
+<LinearLayout
+android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp">
+
+
+
+<DatePicker
+android:id="@+id/projectDatePicker"
+android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:calendarViewShown="false"
+    android:datePickerMode="spinner"
+    android:layout_marginEnd="0dp"/>
+
+<TextView
+android:id="@+id/submissionDateLabel"
+android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:text="Submission Date"
+    android:textSize="18sp"
+    android:gravity="center_vertical"/>
+
+<DatePicker
+android:id="@+id/submissionDatePicker"
+android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:calendarViewShown="false"
+    android:datePickerMode="spinner"/>
 
     </LinearLayout>
+<EditText
+android:id="@+id/taskDescriptionEditText"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Task Description"
+android:textSize="18sp"
+android:padding="16dp"
+android:layout_marginTop="10dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/note_background">
-    <EditText
-        android:id="@+id/addTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Title"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:paddingBottom="8dp"
-        android:paddingTop="8dp"
-
-        android:visibility="gone"
-        />
-
-    <EditText
-        android:paddingTop="2dp"
-        android:id="@+id/noteContent"
-        android:layout_width="match_parent"
-        android:layout_height="205dp"
-
-        android:layout_weight="1"
-        android:textSize="18sp"
-        android:gravity="start"
-        android:hint="Write your note here..."
-
-        android:padding="16dp"
-        android:visibility="gone" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:background="@color/dgray"
-            android:id="@+id/postButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="285dp"
-            android:textSize="16sp"
-            android:text="Post"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/white"
-            android:visibility="gone" />
+<Button
+android:id="@+id/postButton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Post"
+android:textSize="18sp"
+android:background="@color/dgray"
+android:textColor="@color/white"
+android:layout_gravity="center_horizontal"
+    android:paddingHorizontal="30dp"
+    android:layout_marginLeft="135dp"
+    android:layout_marginBottom="10dp"
+    />
 
     </LinearLayout>
-
 </LinearLayout>
