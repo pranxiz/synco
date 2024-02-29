@@ -6,36 +6,25 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MessageAdapter :
+class MessageAdapter(private val messageList: List<Message>) :
     RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
-    private val messages = mutableListOf<Message>()
+
+    inner class MessageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val messageText: TextView = itemView.findViewById(R.id.messageText)
+        // You can add other views if needed
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.message_item, parent, false)
-        return MessageViewHolder(view)
+        val itemView = LayoutInflater.from(parent.context)
+            .inflate(R.layout.message_item, parent, false)
+        return MessageViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
-        holder.bind(messages[position])
+        val currentItem = messageList[position]
+        holder.messageText.text = currentItem.messageText
+        // Set other views if needed
     }
 
-    override fun getItemCount(): Int = messages.size
-
-    inner class MessageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val messageUser: TextView = itemView.findViewById(R.id.messageUser)
-        private val messageTime: TextView = itemView.findViewById(R.id.messageTime)
-        private val messageText: TextView = itemView.findViewById(R.id.messageText)
-
-        fun bind(message: Message) {
-            messageUser.text = message.userName
-            messageTime.text = message.messageTime
-            messageText.text = message.messageText
-        }
-    }
-
-    data class Message(
-        val userName: String,
-        val messageTime: String,
-        val messageText: String
-    )
-    }
+    override fun getItemCount() = messageList.size
+}

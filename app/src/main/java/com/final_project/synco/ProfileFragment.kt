@@ -19,7 +19,7 @@ class ProfileFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
         // Set a click listener for the edit profile button
-        view.findViewById<Button>(R.id.edile).setOnClickListener {
+        view.findViewById<Button>(R.id.editP).setOnClickListener {
 
             val intent = Intent(requireActivity(), editProfile::class.java)
             startActivity(intent)
