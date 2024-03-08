@@ -10,7 +10,8 @@ import android.widget.Button
 
 
 class ProfileFragment : Fragment() {
-
+    lateinit var logout: Button
+    lateinit var cancel: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,13 +19,22 @@ class ProfileFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
-        // Set a click listener for the edit profile button
-        view.findViewById<Button>(R.id.editP).setOnClickListener {
+        logout = view.findViewById(R.id.logout)
+        cancel = view.findViewById(R.id.cancel)
 
-            val intent = Intent(requireActivity(), editProfile::class.java)
+        logout.setOnClickListener {
+            val intent = Intent(requireActivity(), login_page::class.java)
             startActivity(intent)
         }
+
+        cancel.setOnClickListener {
+            val intent = Intent(requireActivity(), Spage::class.java)
+            startActivity(intent)
+        }
+
         return view
     }
-
 }
+
+
+

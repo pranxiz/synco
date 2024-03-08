@@ -3,46 +3,137 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:paddingRight="18dp"
+    android:paddingLeft="18dp">
 
-    <TextView
-        android:id="@+id/classNameTextView"
+    <LinearLayout
+        android:id="@+id/show"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="4dp"/>
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/note_background">
 
-    <TextView
-        android:id="@+id/subjectNameTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="4dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical">
 
-    <TextView
-        android:id="@+id/projectDateTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="4dp"/>
+            <TextView
+                android:id="@+id/textViewTaskName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:text="Project Name "
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/submissionDateTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="4dp"/>
+            <TextView
+                android:id="@+id/projectNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:padding="6dp"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/dgray"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_marginTop="3dp"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/assignDateLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
 
-    <TextView
-        android:id="@+id/descriptionTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="@android:color/black"/>
+                android:text="Project Date"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                />
 
+
+
+            <TextView
+                android:id="@+id/projectDateTextView"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+              android:textStyle="bold"
+/>
+        </LinearLayout>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/dgray"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_marginTop="3dp"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/submissionDateLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="Submission Date"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/submissionDateTextView"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/dgray"
+            />
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/postButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Task"
+            android:textSize="18sp"
+            android:backgroundTint="@color/mlue"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:paddingHorizontal="30dp"
+            android:layout_marginLeft="103dp"
+            android:layout_marginBottom="10dp"
+            />
+
+</LinearLayout>
 </LinearLayout>

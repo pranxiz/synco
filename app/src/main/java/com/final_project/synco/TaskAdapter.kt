@@ -11,8 +11,7 @@ class TaskAdapter(private val taskList: MutableList<Task>) :
     RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val classNameTextView: TextView = itemView.findViewById(R.id.classNameTextView)
-        val subjectNameTextView: TextView = itemView.findViewById(R.id.subjectNameTextView)
+        val projectNameTextView: TextView = itemView.findViewById(R.id.projectNameTextView)
         val projectDateTextView: TextView = itemView.findViewById(R.id.projectDateTextView)
         val submissionDateTextView: TextView = itemView.findViewById(R.id.submissionDateTextView)
         val descriptionTextView: TextView = itemView.findViewById(R.id.descriptionTextView)
@@ -30,8 +29,7 @@ class TaskAdapter(private val taskList: MutableList<Task>) :
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         val currentItem = taskList[position]
 
-        holder.classNameTextView.text = currentItem.className
-        holder.subjectNameTextView.text = currentItem.subjectName
+        holder.projectNameTextView.text = currentItem.projectName
         holder.projectDateTextView.text = currentItem.projectDate
         holder.submissionDateTextView.text = currentItem.submissionDate
         holder.descriptionTextView.text = currentItem.description

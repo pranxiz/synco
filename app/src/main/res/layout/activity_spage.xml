@@ -5,6 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EDF7FF"
     tools:context=".Spage">
 
     <FrameLayout
@@ -30,12 +31,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             app:labelVisibilityMode="labeled"
-            app:itemRippleColor="@color/dgray"
+            app:itemRippleColor="#C2E1F8"
             app:itemTextColor="@color/white"
             android:background="@color/dgray"
             app:itemIconTint="@color/white"
-            android:outlineAmbientShadowColor="@color/white"
-            app:backgroundTint="@color/dgray"
+          
+            android:outlineAmbientShadowColor="@color/dgray"
+            app:backgroundTint="@color/mlue"
+
             app:menu="@menu/botttom_menu"
             app:itemIconSize="20dp"
             >

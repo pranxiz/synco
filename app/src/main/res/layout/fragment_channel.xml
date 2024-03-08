@@ -17,19 +17,19 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
-        android:background="@color/dgray"
+        android:background="@color/mlue"
         app:tabTextColor="@color/white"
-        app:tabSelectedTextColor="@color/white"
-        app:tabIndicatorColor="@color/white"
+        app:tabSelectedTextColor="#C2E1F8"
+        app:tabIndicatorColor="#C2E1F8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.tabs.TabItem
-            android:text="Assigned"
+            android:text="Add Project"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <com.google.android.material.tabs.TabItem
-            android:text="Accepted"
+            android:text="Add Task"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <com.google.android.material.tabs.TabItem

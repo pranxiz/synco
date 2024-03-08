@@ -26,15 +26,14 @@ class
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         val currentTask = tasks[position]
-        holder.classTextView.text = currentTask.className
-        holder.subjectTextView.text = currentTask.subjectName
+
         holder.projectDateTextView.text = currentTask.projectDate
         holder.submissionDateTextView.text = currentTask.submissionDate
         holder.descriptionTextView.text = currentTask.description
 
-        // Implement any click listeners or actions for the accept button here
+
         holder.acceptButton.setOnClickListener {
-            // Add your action here
+
         }
     }
 
