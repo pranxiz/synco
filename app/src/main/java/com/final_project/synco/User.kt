@@ -1,9 +1,11 @@
 package com.final_project.synco
 
-import android.provider.ContactsContract.CommonDataKinds.Email
 import com.google.gson.annotations.SerializedName
 
 data class User(
+    @SerializedName("id")
+    val id: String? = null,
+
     @SerializedName("name")
     val name: String?,
 
@@ -13,6 +15,4 @@ data class User(
     @SerializedName("password")
     val password: String,
 
-    @SerializedName("cpassword")
-    val confirmpass: String
-)
+    )
