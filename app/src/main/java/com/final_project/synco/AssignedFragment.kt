@@ -9,14 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class AssignedFragment : Fragment() {
-    private lateinit var taskAdapter: TaskAdapter
-    private val taskList = mutableListOf<Task>()
-    private lateinit var recyclerViewAccepted: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_assigned, container, false)
     }
 
@@ -30,12 +28,6 @@ class AssignedFragment : Fragment() {
         val submissionDatePicker = view.findViewById<DatePicker>(R.id.submissionDatePicker)
         val taskDescriptionEditText = view.findViewById<EditText>(R.id.taskDescriptionEditText)
         val postButton = view.findViewById<Button>(R.id.postButton)
-        recyclerViewAccepted = view.findViewById(R.id.recyclerView_accepted)
-
-        // Setup RecyclerView
-        recyclerViewAccepted.layoutManager = LinearLayoutManager(requireContext())
-        taskAdapter = TaskAdapter(taskList)
-        recyclerViewAccepted.adapter = taskAdapter
 
         addButton.setOnClickListener {
             if (show.visibility == View.GONE) {
@@ -57,10 +49,11 @@ class AssignedFragment : Fragment() {
             val task = Task(projectNameText, projectDate, submissionDate, description)
 
             // Add the task to the list
-            taskList.add(task)
+            // (You might want to handle the task list differently now that the RecyclerView is in another fragment)
+            // taskList.add(task)
 
             // Notify the adapter that the data set has changed
-            taskAdapter.notifyDataSetChanged()
+            // taskAdapter.notifyDataSetChanged()
 
             show.visibility = View.GONE
 

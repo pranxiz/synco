@@ -29,8 +29,8 @@ class ChannelFragment : Fragment() {
         fViewPager.adapter = FragmentAdapter(this)
         TabLayoutMediator(fTabLayout, fViewPager) { tab, position ->
             when (position) {
-                0 -> tab.text = "Assigned"
-                1 -> tab.text = "Accepted"
+                0 -> tab.text = "Project"
+                1 -> tab.text = "Task"
                 2 -> tab.text = "Done"
             }
         }.attach()
