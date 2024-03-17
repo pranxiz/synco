@@ -74,6 +74,7 @@
                     android:background="@drawable/custom_edittext"
                     android:padding="8dp"
                     android:hint="Email"
+                    android:inputType="textEmailAddress"
                     android:drawableLeft="@drawable/baseline_person_24"
                     android:textColor="@color/black"
                     android:drawablePadding="8dp"/>
@@ -87,15 +88,16 @@
                 android:layout_marginTop="20dp">
 
                 <EditText
+                    android:id="@+id/Password"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:id="@+id/Password"
                     android:background="@drawable/custom_edittext"
-                    android:padding="8dp"
-                    android:hint="Password"
                     android:drawableLeft="@drawable/baseline_lock_24"
-                    android:textColor="@color/black"
-                    android:drawablePadding="8dp"/>
+                    android:drawablePadding="8dp"
+                    android:hint="Password"
+                    android:padding="8dp"
+                    android:inputType="textPassword"
+                    android:textColor="@color/black" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

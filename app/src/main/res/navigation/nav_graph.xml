@@ -20,4 +20,8 @@
         android:label="PeopleFragment"
         tools:layout="@layout/fragment_people" />
 
+    <action
+        android:id="@+id/action_taskItem_to_viewTaskRecycler"
+        app:destination="@+id/recyclerView_task" />
+
 </navigation>

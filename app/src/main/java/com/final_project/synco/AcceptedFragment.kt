@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class AcceptedFragment : Fragment() {
     private lateinit var taskAdapter: TaskAdapter
-    private val taskList = mutableListOf<Task>()
+    private val task_item = mutableListOf<Task>()
     private lateinit var recyclerViewAccepted: RecyclerView
 
     override fun onCreateView(
@@ -23,14 +23,12 @@ class AcceptedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Initialize views
+
         recyclerViewAccepted = view.findViewById(R.id.recyclerView_accepted)
 
         // Set up RecyclerView
         recyclerViewAccepted.layoutManager = LinearLayoutManager(requireContext())
-        taskAdapter = TaskAdapter(taskList)
+        taskAdapter = TaskAdapter(task_item)
         recyclerViewAccepted.adapter = taskAdapter
-
-        // Set up other views and buttons if needed
     }
 }

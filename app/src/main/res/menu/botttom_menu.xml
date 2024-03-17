@@ -3,20 +3,15 @@
 
     <item
         android:id="@+id/bottom_channel"
-        android:title="Project"
-        android:icon="@drawable/task"
-        android:iconTint="@color/mlue"
-        />
-
-    <item
-        android:id="@+id/bottom_people"
         android:title="View"
         android:icon="@drawable/view"
         android:iconTint="@color/mlue"
         />
+
+
     <item
         android:id="@+id/bottom_profile"
-        android:title="Logout"
+        android:title="Account"
         android:icon="@drawable/logout"
         android:iconTint="@color/mlue"
         />

@@ -31,7 +31,7 @@ class ChannelFragment : Fragment() {
             when (position) {
                 0 -> tab.text = "Project"
                 1 -> tab.text = "Task"
-                2 -> tab.text = "Done"
+
             }
         }.attach()
 
@@ -40,13 +40,12 @@ class ChannelFragment : Fragment() {
     }
 
     private inner class FragmentAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
-        override fun getItemCount(): Int = 3
+        override fun getItemCount(): Int = 2
 
         override fun createFragment(position: Int): Fragment {
             return when (position) {
                 0 -> AssignedFragment()
                 1 -> AcceptedFragment()
-                2 -> DoneFragment()
                 else -> throw IllegalStateException("Unexpected position $position")
             }
         }

@@ -20,7 +20,6 @@ class Spage : AppCompatActivity() {
 
                 R.id.bottom_channel -> replaceFragment(ChannelFragment())
                 R.id.bottom_profile -> replaceFragment(ProfileFragment())
-                R.id.bottom_people -> replaceFragment(PeopleFragment())
 
 
                 else ->{

@@ -13,7 +13,7 @@ class FragmentAdapter(fa: FragmentActivity): FragmentStateAdapter(fa){
       return when(position){
           0 -> AssignedFragment()
           1 -> AcceptedFragment()
-          2 -> DoneFragment()
+
           else -> AssignedFragment()
       }
     }

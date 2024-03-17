@@ -34,139 +34,110 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+
             android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="20dp"
-            android:paddingEnd="15dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center_vertical">
-
-            <TextView
+<TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:text="Name:"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:layout_marginStart="45dp"/>
-            <EditText
+                android:textSize="20sp"
+    android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"/>
+            <TextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textColor="@color/dgray"
-                android:textSize="19sp"
-                android:layout_marginStart="76dp"
+                android:textSize="25sp"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="8dp"
 
                />
-        </LinearLayout>
+
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:background="#EDF7FF"
                 />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="20dp"
-                android:paddingEnd="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center_vertical">
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email address"
+                    android:text="Email address:"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:layout_marginStart="18dp"/>
-                <EditText
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="30dp"/>
+                <TextView
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="39dp"
+                    android:layout_marginStart="40dp"
                     android:textStyle="bold"
 
                     android:textColor="@color/dgray"
-                    android:textSize="19sp"/>
-            </LinearLayout>
+                    android:textSize="25sp"
+                    android:layout_marginBottom="8dp"/>
+
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:background="#EDF7FF"
                 />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="20dp"
-                android:paddingEnd="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center_vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Password"
+                    android:text="Password:"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:layout_marginStart="33dp"/>
-                <EditText
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="30dp"/>
+                <TextView
                     android:id="@+id/password"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="58dp"
+                    android:layout_marginStart="40dp"
                     android:textStyle="bold"
+                    android:text="Update your password in Web"
+                    android:textColor="#BCBBBB"
+                    android:textSize="25sp"
+                    android:layout_marginBottom="8dp"/>
 
-                    android:textColor="@color/dgray"
-                    android:textSize="19sp"/>
-            </LinearLayout>
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:background="#EDF7FF"
                 />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="20dp"
-                android:paddingEnd="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center_vertical">
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Confirm Password"
+                    android:text="Confirm Password:"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:layout_marginStart="5dp"/>
-                <EditText
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="30dp"/>
+                <TextView
                     android:id="@+id/cpassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="17dp"
+                    android:layout_marginStart="40dp"
+                    android:text="Update your password in Web"
                     android:textStyle="bold"
-                    android:hint=""
+                    android:textColor="#BCBBBB"
+                    android:textSize="25sp"
+                    android:layout_marginBottom="8dp"/>
 
-                    android:textColor="@color/dgray"
-                    android:textSize="19sp"/>
 
-            </LinearLayout>
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
@@ -185,16 +156,6 @@
 
             >
 
-
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Update Profile"
-                android:id="@+id/cancel"
-        android:layout_marginRight="12dp"
-                android:backgroundTint="@color/mlue"
-                />
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -202,7 +163,8 @@
                     android:id="@+id/logout"
          android:layout_marginLeft="12dp"
                     android:backgroundTint="@color/mlue"
-                    />
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"/>
             </LinearLayout>
 
         </LinearLayout>
