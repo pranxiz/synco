@@ -59,7 +59,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/projectName"
+                android:id="@+id/class_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18dp"
@@ -99,7 +99,7 @@
 
 
             <DatePicker
-                android:id="@+id/projectDatePicker"
+                android:id="@+id/project_date"
                 android:layout_width="0dp"
                 android:layout_height="90dp"
                 android:layout_weight="1"
@@ -136,7 +136,7 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
             <DatePicker
-                android:id="@+id/submissionDatePicker"
+                android:id="@+id/submission_date"
                 android:layout_width="0dp"
                 android:layout_height="90dp"
                 android:layout_weight="1"
@@ -150,7 +150,7 @@
             android:background="@color/mlue"
             />
         <EditText
-            android:id="@+id/taskDescriptionEditText"
+            android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Task Description"

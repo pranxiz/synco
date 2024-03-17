@@ -21,10 +21,8 @@ class ChannelFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_channel, container, false)
 
-
         val fViewPager: ViewPager2 = view.findViewById(R.id.viewPager)
         val fTabLayout: TabLayout = view.findViewById(R.id.tabLayout)
-
 
         fViewPager.adapter = FragmentAdapter(this)
         TabLayoutMediator(fTabLayout, fViewPager) { tab, position ->
@@ -34,7 +32,6 @@ class ChannelFragment : Fragment() {
                 2 -> tab.text = "Done"
             }
         }.attach()
-
 
         return view
     }

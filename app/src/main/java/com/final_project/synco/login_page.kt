@@ -1,9 +1,12 @@
 package com.final_project.synco
 
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.annotation.RequiresApi
 import com.final_project.synco.databinding.ActivityLoginPageBinding
 import com.google.android.material.textfield.TextInputLayout
 import retrofit2.Call
@@ -17,6 +20,7 @@ class login_page : AppCompatActivity() {
     lateinit var passwordLayout: TextInputLayout
     lateinit var loginButton: Button
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -54,6 +58,7 @@ class login_page : AppCompatActivity() {
         return true
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun loginUser() {
         val email = emailLayout.editText?.text.toString().trim()
         val password = passwordLayout.editText?.text.toString().trim()
@@ -65,6 +70,8 @@ class login_page : AppCompatActivity() {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.isSuccessful) {
                     val authToken = "Bearer ${response.body()?.token}"
+                    // Save authToken
+                    SharedPreferencesHelper.saveAuthToken(this@login_page, authToken)
                     val intent = Intent(this@login_page, Spage::class.java)
                     intent.putExtra("authToken", authToken)
                     startActivity(intent)
